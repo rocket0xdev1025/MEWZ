@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Cat | $MEWZ</title>
+  <meta name="description" content="The internet’s favorite cat just landed—bringing jungle energy, wild memes, and moonbound vibes. $MEWZ on Solana." />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amazon: {
+              orange: "#FF9900",
+              hover: "#FFB84D",
+              navy: "#131921",
+              ink: "#0B1117",
+              steel: "#232F3E",
+            },
+            echo: {
+              blue: "#1E6BFF",
+              glow: "#5EC8F8",
+              deep: "#0A1B3A",
+            },
+            cat: {
+              cream: "#F6E7C1",
+              gold: "#E8B923",
+              eye: "#C9DC3A",
+            },
+            jungle: {
+              950: "#06110D",
+              900: "#0A1C16",
+              800: "#123028",
+            },
+          }, 
+          fontFamily: {
+            display: ["Fredoka", "system-ui", "sans-serif"],
+            body: ["Outfit", "system-ui", "sans-serif"],
+            ticker: ["Bungee", "cursive"],
+          },
+          boxShadow: {
+            glow: "0 0 40px rgba(255, 153, 0, 0.35)",
+            echo: "0 0 48px rgba(94, 200, 248, 0.28)",
+            cream: "0 20px 60px rgba(246, 231, 193, 0.08)",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --amazon-orange: #ff9900;
+      --echo-glow: #5ec8f8;
+      --cat-cream: #f6e7c1;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Outfit, system-ui, sans-serif;
+      background:
+        radial-gradient(1200px 700px at 12% -10%, rgba(255, 153, 0, 0.16), transparent 55%),
+        radial-gradient(900px 600px at 92% 8%, rgba(94, 200, 248, 0.14), transparent 50%),
+        radial-gradient(800px 500px at 50% 100%, rgba(18, 72, 52, 0.45), transparent 55%),
+        linear-gradient(180deg, #131921 0%, #0b1117 38%, #06110d 100%);
+      color: var(--cat-cream);
+    }
+
+    body::before {
+      content: "";
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.22;
+      background-image:
+        radial-gradient(circle at 18% 22%, rgba(255, 153, 0, 0.18) 0 2px, transparent 3px),
+        radial-gradient(circle at 72% 48%, rgba(94, 200, 248, 0.16) 0 2px, transparent 3px),
+        radial-gradient(circle at 40% 78%, rgba(246, 231, 193, 0.12) 0 1.5px, transparent 2.5px);
+      background-size: 180px 180px, 220px 220px, 140px 140px;
+      animation: drift 28s linear infinite;
+    }
+
+    @keyframes drift {
+      from { background-position: 0 0, 0 0, 0 0; }
+      to { background-position: 180px 90px, -220px 110px, 70px -140px; }
+    }
+
+    .hero-banner {
+      background-image:
+        linear-gradient(180deg, rgba(11, 17, 23, 0.28) 0%, rgba(11, 17, 23, 0.55) 55%, #0b1117 100%),
+        url("banner.jpg");
+      background-size: cover;
+      background-position: center 42%;
+    }
+
+    .amazon-smile {
+      width: 168px;
+      height: 18px;
+      margin: 6px auto 0;
+      border: none;
+      border-bottom: 4px solid #ff9900;
+      border-radius: 0 0 50% 50%;
+      filter: drop-shadow(0 0 8px rgba(255, 153, 0, 0.7));
+    }
+
+    .paw {
+      width: 18px;
+      height: 18px;
+      background: currentColor;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .paw::before,
+    .paw::after {
+      content: "";
+      position: absolute;
+      background: currentColor;
+      border-radius: 50%;
+    }
+
+    .paw::before {
+      width: 9px;
+      height: 11px;
+      top: -10px;
+      left: 4.5px;
+    }
+
+    .paw::after {
+      width: 8px;
+      height: 9px;
+      top: -7px;
+      left: -5px;
+      box-shadow: 16px 0 0 currentColor;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 22s linear infinite;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .float-slow {
+      animation: floaty 6s ease-in-out infinite;
+    }
+
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .glow-ring {
+      box-shadow:
+        0 0 0 6px rgba(255, 153, 0, 0.18),
+        0 0 40px rgba(94, 200, 248, 0.35);
+    }
+
+    .ear {
+      width: 28px;
+      height: 28px;
+      background: #f6e7c1;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+    }
+
+    .step-card:hover .step-num {
+      transform: scale(1.08) rotate(-6deg);
+      background: #ff9900;
+      color: #131921;
+    }
+
+    .vine {
+      pointer-events: none;
+      position: absolute;
+      opacity: 0.35;
+    }
+
+    #dexscreener-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 125%;
+    }
+
+    @media (min-width: 1024px) {
+      #dexscreener-embed {
+        padding-bottom: 62%;
+      }
+    }
+
+    #dexscreener-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .copy-flash {
+      animation: pop 0.45s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.06); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="relative overflow-x-hidden">
+  <div class="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+    <svg class="vine -left-8 top-24 h-64 w-40 text-amazon-orange/40" viewBox="0 0 120 320" fill="none">
+      <path d="M40 0 C70 60, 10 90, 50 140 C90 190, 20 230, 60 320" stroke="currentColor" stroke-width="3" />
+      <ellipse cx="72" cy="70" rx="16" ry="8" fill="#FF9900" opacity="0.55" transform="rotate(-30 72 70)" />
+      <ellipse cx="28" cy="150" rx="18" ry="9" fill="#E8B923" opacity="0.45" transform="rotate(25 28 150)" />
+      <ellipse cx="70" cy="230" rx="15" ry="8" fill="#FF9900" opacity="0.5" transform="rotate(-20 70 230)" />
+    </svg>
+    <svg class="vine right-0 top-1/3 h-72 w-44 text-echo-glow/30" viewBox="0 0 120 320" fill="none">
+      <path d="M80 0 C40 70, 110 110, 60 170 C20 220, 100 260, 50 320" stroke="currentColor" stroke-width="3" />
+      <ellipse cx="46" cy="86" rx="16" ry="8" fill="#5EC8F8" opacity="0.4" transform="rotate(28 46 86)" />
+      <ellipse cx="88" cy="180" rx="18" ry="9" fill="#1E6BFF" opacity="0.35" transform="rotate(-18 88 180)" />
+    </svg>
+  </div>
+
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-amazon-navy/85 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="logo.png" alt="Amazon Cat logo" class="h-12 w-12 rounded-full object-cover ring-2 ring-amazon-orange glow-ring" />
+        <div class="leading-tight">
+          <p class="font-display text-lg tracking-wide text-cat-cream">Amazon Cat</p>
+          <p class="font-ticker text-[11px] text-amazon-orange">$MEWZ</p>
+        </div>
+      </a>
+      <nav class="hidden items-center gap-7 text-sm font-semibold text-cat-cream/80 md:flex">
+        <a href="#about" class="hover:text-amazon-orange">About</a>
+        <a href="#howtobuy" class="hover:text-amazon-orange">How to Buy</a>
+        <a href="#chart" class="hover:text-amazon-orange">Chart</a>
+        <a href="https://x.com/AmazonMEWZ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-amazon-orange">
+          <img src="x.png" alt="" class="h-4 w-4 rounded-sm" />
+          Twitter
+        </a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="rounded-full bg-amazon-orange px-4 py-2 text-sm font-display font-semibold text-amazon-navy shadow-glow transition hover:bg-amazon-hover">Buy Now</a>
+        <button id="menuBtn" class="rounded-lg border border-white/15 p-2 md:hidden" aria-label="Open menu">
+          <span class="block h-0.5 w-5 bg-cat-cream"></span>
+          <span class="mt-1 block h-0.5 w-5 bg-cat-cream"></span>
+          <span class="mt-1 block h-0.5 w-5 bg-cat-cream"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-amazon-navy px-4 py-4 md:hidden">
+      <div class="flex flex-col gap-3 font-semibold">
+        <a href="#about" class="hover:text-amazon-orange">About</a>
+        <a href="#howtobuy" class="hover:text-amazon-orange">How to Buy</a>
+        <a href="#chart" class="hover:text-amazon-orange">Chart</a>
+        <a href="https://x.com/AmazonMEWZ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-amazon-orange">
+          <img src="x.png" alt="" class="h-4 w-4" /> Twitter
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="relative z-10">
+    <section class="hero-banner relative min-h-[88vh] overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-amazon-ink/80 via-amazon-ink/35 to-transparent"></div>
+      <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[1.05fr_0.95fr] md:py-24">
+        <div>
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-amazon-orange/40 bg-amazon-navy/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-amazon-orange">
+            <span class="paw text-amazon-orange"></span>
+            Solana memecoin
+          </div>
+          <h1 class="font-display text-5xl leading-[0.95] text-cat-cream sm:text-6xl lg:text-7xl">
+            Amazon Cat
+            <span class="block text-amazon-orange">$MEWZ</span>
+          </h1>
+          <div class="amazon-smile"></div>
+          <p class="mt-7 max-w-xl text-lg leading-relaxed text-cat-cream/90 sm:text-xl">
+            The internet’s favorite cat just landed—bringing jungle energy, wild memes, and moonbound vibes.
+          </p>
+          <p class="mt-3 max-w-xl text-base text-echo-glow/90">
+            Unstoppable on Solana. One tuxedo legend, one Echo-powered takeover, zero chill.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="rounded-full bg-amazon-orange px-7 py-3 font-display text-lg text-amazon-navy shadow-glow transition hover:-translate-y-0.5 hover:bg-amazon-hover">Buy Now</a>
+            <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border border-echo-glow/50 bg-echo-deep/70 px-7 py-3 font-display text-lg text-echo-glow shadow-echo transition hover:-translate-y-0.5 hover:bg-echo-deep">Chart</a>
+            <a href="https://x.com/AmazonMEWZ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/50 px-5 py-3 font-semibold text-white transition hover:border-white/40">
+              <img src="x.png" alt="X" class="h-5 w-5 rounded-sm" />
+              Follow
+            </a>
+          </div>
+          <div class="mt-8 max-w-xl rounded-2xl border border-amazon-orange/30 bg-amazon-navy/75 p-4 shadow-cream backdrop-blur">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-amazon-orange">Contract Address</p>
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <code id="caValue" class="flex-1 break-all rounded-xl bg-black/40 px-3 py-2 font-mono text-sm text-cat-cream">TBA</code>
+              <button id="copyCa" type="button" class="rounded-xl bg-cat-gold px-4 py-2 font-display text-amazon-navy transition hover:brightness-110">Copy CA</button>
+            </div>
+            <p id="copyMsg" class="mt-2 hidden text-sm text-cat-eye">Copied to clipboard.</p>
+          </div>
+        </div>
+        <div class="relative mx-auto w-full max-w-md">
+          <div class="absolute -top-4 left-10 ear"></div>
+          <div class="absolute -top-4 right-10 ear"></div>
+          <div class="float-slow relative overflow-hidden rounded-[2rem] border-4 border-amazon-orange/80 bg-amazon-navy shadow-glow">
+            <img src="logo.png" alt="Amazon Cat hugging an Echo Show" class="aspect-square w-full object-cover" />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-amazon-navy via-amazon-navy/80 to-transparent p-5">
+              <p class="font-ticker text-sm text-amazon-orange">NOW PLAYING</p>
+              <p class="font-display text-2xl text-cat-cream">Unstoppable</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="border-y border-amazon-orange/30 bg-amazon-steel overflow-hidden">
+      <div class="marquee-track py-3 text-amazon-orange">
+        <div class="flex items-center gap-8 px-6 font-ticker text-sm tracking-wider">
+          <span>$MEWZ</span><span>✦</span><span>AMAZON CAT</span><span>✦</span><span>JUNGLE ENERGY</span><span>✦</span><span>WILD MEMES</span><span>✦</span><span>MOONBOUND VIBES</span><span>✦</span><span>UNSTOPPABLE</span><span>✦</span>
+        </div>
+        <div class="flex items-center gap-8 px-6 font-ticker text-sm tracking-wider" aria-hidden="true">
+          <span>$MEWZ</span><span>✦</span><span>AMAZON CAT</span><span>✦</span><span>JUNGLE ENERGY</span><span>✦</span><span>WILD MEMES</span><span>✦</span><span>MOONBOUND VIBES</span><span>✦</span><span>UNSTOPPABLE</span><span>✦</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="about" class="mx-auto max-w-6xl px-4 py-20">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <p class="font-ticker text-xs tracking-[0.28em] text-echo-glow">THE LEGEND</p>
+        <h2 class="mt-3 font-display text-4xl text-cat-cream sm:text-5xl">Jungle energy. Wild memes. Moonbound.</h2>
+        <p class="mt-5 text-lg leading-relaxed text-cat-cream/80">
+          The internet’s favorite cat just landed—bringing jungle energy, wild memes, and moonbound vibes. $MEWZ is the tuxedo terror that hopped an Echo Show, hijacked the night, and padded straight onto Solana.
+        </p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="rounded-3xl border border-amazon-orange/25 bg-amazon-navy/70 p-6 shadow-cream">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-amazon-orange/15 text-amazon-orange">
+            <span class="paw"></span>
+          </div>
+          <h3 class="font-display text-2xl text-amazon-orange">Jungle Energy</h3>
+          <p class="mt-3 text-cat-cream/80">Amazon-born chaos. Canopy-loud, claw-sharp, and always hunting the next candle. This cat doesn’t browse—it pounces.</p>
+        </article>
+        <article class="rounded-3xl border border-echo-glow/25 bg-amazon-navy/70 p-6 shadow-echo">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-echo-glow/15 text-echo-glow">
+            <span class="paw"></span>
+          </div>
+          <h3 class="font-display text-2xl text-echo-glow">Wild Memes</h3>
+          <p class="mt-3 text-cat-cream/80">A black-and-white icon with a glowing blue screen and zero indoor voice. If the timeline has a house cat, $MEWZ is the one running the house.</p>
+        </article>
+        <article class="rounded-3xl border border-cat-gold/30 bg-amazon-navy/70 p-6">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-cat-gold/15 text-cat-gold">
+            <span class="paw"></span>
+          </div>
+          <h3 class="font-display text-2xl text-cat-gold">Moonbound Vibes</h3>
+          <p class="mt-3 text-cat-cream/80">Unstoppable playlist. Unstoppable cat. $MEWZ is here to climb, stretch, and launch—one paw-print at a time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="howtobuy" class="relative bg-gradient-to-b from-transparent via-jungle-900/80 to-transparent py-20">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="mb-12 text-center">
+          <p class="font-ticker text-xs tracking-[0.28em] text-amazon-orange">HOW TO BUY</p>
+          <h2 class="mt-3 font-display text-4xl text-cat-cream sm:text-5xl">Grab $MEWZ on Solana</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-cat-cream/75">Four quick pounces. Wallet, SOL, swap, then you’re in the jungle with Amazon Cat.</p>
+        </div>
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <article class="step-card rounded-3xl border border-white/10 bg-amazon-navy p-6">
+            <div class="step-num mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-echo-deep font-display text-xl text-echo-glow transition">1</div>
+            <h3 class="font-display text-xl text-cat-cream">Get a Solana wallet</h3>
+            <p class="mt-3 text-sm leading-relaxed text-cat-cream/75">Install Phantom or Solflare and create a wallet. Guard your seed phrase like a cat guards a sunbeam.</p>
+          </article>
+          <article class="step-card rounded-3xl border border-white/10 bg-amazon-navy p-6">
+            <div class="step-num mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-echo-deep font-display text-xl text-echo-glow transition">2</div>
+            <h3 class="font-display text-xl text-cat-cream">Fund it with SOL</h3>
+            <p class="mt-3 text-sm leading-relaxed text-cat-cream/75">Buy SOL on an exchange, then send it to your wallet. You’ll need SOL for the swap and a little extra for fees.</p>
+          </article>
+          <article class="step-card rounded-3xl border border-white/10 bg-amazon-navy p-6">
+            <div class="step-num mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-echo-deep font-display text-xl text-echo-glow transition">3</div>
+            <h3 class="font-display text-xl text-cat-cream">Open the swap</h3>
+            <p class="mt-3 text-sm leading-relaxed text-cat-cream/75">Hit <span class="text-amazon-orange">Buy Now</span> to open Pump.fun with SOL as input and $MEWZ as output. Connect your wallet.</p>
+          </article>
+          <article class="step-card rounded-3xl border border-white/10 bg-amazon-navy p-6">
+            <div class="step-num mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-echo-deep font-display text-xl text-echo-glow transition">4</div>
+            <h3 class="font-display text-xl text-cat-cream">Swap SOL for $MEWZ</h3>
+            <p class="mt-3 text-sm leading-relaxed text-cat-cream/75">Confirm the swap, copy the CA if you need it, and welcome to the jungle. Chart it. Meme it. Stay unstoppable.</p>
+          </article>
+        </div>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="rounded-full bg-amazon-orange px-8 py-3 font-display text-lg text-amazon-navy shadow-glow hover:bg-amazon-hover">Buy Now</a>
+          <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border border-echo-glow/50 px-8 py-3 font-display text-lg text-echo-glow hover:bg-echo-deep/60">Chart</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="chart" class="mx-auto max-w-6xl px-4 py-20">
+      <div class="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <p class="font-ticker text-xs tracking-[0.28em] text-echo-glow">LIVE JUNGLE</p>
+          <h2 class="mt-2 font-display text-4xl text-cat-cream">$MEWZ Chart</h2>
+        </div>
+        <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border border-cat-gold/40 px-5 py-2 font-semibold text-cat-gold hover:bg-cat-gold/10">Open Dexscreener</a>
+      </div>
+      <div class="overflow-hidden rounded-3xl border border-echo-glow/20 bg-amazon-navy shadow-echo">
+        <div id="dexscreener-embed">
+          <iframe
+            title="Dexscreener chart for MEWZ"
+            src="https://dexscreener.com/solana/TBA?embed=1&loadChartSettings=0&trades=1&tabs=1&info=1&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 pb-20">
+      <div class="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-amazon-orange/30 bg-amazon-steel">
+        <div class="grid items-center md:grid-cols-2">
+          <img src="banner.jpg" alt="Amazon Cat in the night studio" class="h-64 w-full object-cover md:h-full" />
+          <div class="p-8 md:p-12">
+            <h2 class="font-display text-3xl text-cat-cream sm:text-4xl">Join the Amazon Cat pack</h2>
+            <p class="mt-4 text-cat-cream/80">The internet’s favorite cat just landed. Follow the trail, drop the memes, and keep $MEWZ unstoppable.</p>
+            <a href="https://x.com/AmazonMEWZ" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-3 rounded-full bg-black px-6 py-3 font-display text-white ring-2 ring-white/10 hover:ring-amazon-orange">
+              <img src="x.png" alt="" class="h-6 w-6" />
+              @AmazonMEWZ
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-white/10 bg-amazon-navy">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="" class="h-10 w-10 rounded-full object-cover ring-2 ring-amazon-orange" />
+        <div>
+          <p class="font-display text-cat-cream">Amazon Cat · $MEWZ</p>
+          <p class="text-xs text-cat-cream/60">Not financial advice. DYOR. Stay unstoppable.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://x.com/AmazonMEWZ" target="_blank" rel="noopener noreferrer" class="opacity-80 hover:opacity-100">
+          <img src="x.png" alt="Twitter / X" class="h-8 w-8 rounded-md" />
+        </a>
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-amazon-orange hover:text-amazon-hover">Buy Now</a>
+        <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-echo-glow hover:text-white">Chart</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+
+    const copyBtn = document.getElementById("copyCa");
+    const caValue = document.getElementById("caValue");
+    const copyMsg = document.getElementById("copyMsg");
+    copyBtn.addEventListener("click", async () => {
+      const text = caValue.textContent.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (err) {
+        const range = document.createRange();
+        range.selectNodeContents(caValue);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand("copy");
+        selection.removeAllRanges();
+      }
+      copyMsg.classList.remove("hidden");
+      copyBtn.classList.add("copy-flash");
+      copyBtn.textContent = "Copied";
+      setTimeout(() => {
+        copyBtn.classList.remove("copy-flash");
+        copyBtn.textContent = "Copy CA";
+        copyMsg.classList.add("hidden");
+      }, 1800);
+    });
+  </script>
+</body>
+</html>
